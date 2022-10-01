@@ -3,8 +3,9 @@
 1. [General Info](#general-info)
 2. [Technologies](#technologies)
 3. [Installation](#installation)
-4. [Collaboration](#collaboration)
-5. [FAQs](#faqs)
+4. [Postman](#end-points)
+5. [Collaboration](#collaboration)
+6. [FAQs](#faqs)
 
 ### General Info
 ***
@@ -27,9 +28,11 @@ Para poder arrancar el proyecto debes seguir los siguientes pasos:
 $ git clone https://github.com/laura-santiago/delivery_frontend
 $ cd frontend
 $ npm install
+$ ionic serve 
 
-$ ionic serve https://documenter.getpostman.com/view/20375680/2s83tDoCSs
-
+## Postman
+***
+`https://documenter.getpostman.com/view/20375680/2s83tDoCSs`
 
 ## Collaboration
 ***
