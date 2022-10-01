@@ -3,13 +3,13 @@
 1. [General Info](#general-info)
 2. [Technologies](#technologies)
 3. [Installation](#installation)
-4. [Postman](#end-points)
+4. [Postman](#postman)
 5. [Collaboration](#collaboration)
 6. [FAQs](#faqs)
 
 ### General Info
 ***
-FronEnd del proyecto - Catering Service
+FrontEnd del proyecto - Catering Service
 Una app que permitirá gestionar Servicios de Catering de una forma sencilla.
 ### Screenshot
 ![Image text](http://localhost:8100/login)
