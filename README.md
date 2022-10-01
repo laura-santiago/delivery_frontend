@@ -9,7 +9,7 @@
 
 ### General Info
 ***
-FronEnd del proyecto - Catering Service
+FrontEnd del proyecto - Catering Service
 Una app que permitirá gestionar Servicios de Catering de una forma sencilla.
 ### Screenshot
 ![Image text](http://localhost:8100/login)
