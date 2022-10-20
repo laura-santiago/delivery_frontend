@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { UpdatePageRoutingModule } from './update-routing.module';
 
 import { UpdatePage } from './update.page';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { UpdatePage } from './update.page';
     FormsModule,
     IonicModule,
     UpdatePageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ComponentsModule
   ],
   declarations: [UpdatePage]
 })

@@ -1,14 +1,17 @@
-<ion-header>
-
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Actualización de Articulos</ion-title>
   </ion-toolbar>
-
-</ion-header>
+</ion-header> -->
+<app-header></app-header>
 
 <ion-content>
 
   <ion-list lines="full">
+    <ion-list-header>
+      <ion-label>Actualización de Articulos</ion-label>
+    </ion-list-header>
+
     <form [formGroup]="updateItemForm" (ngSubmit)="onSubmit()">
 
       <ion-item>

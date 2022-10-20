@@ -9,6 +9,7 @@ import { CreatePageRoutingModule } from './create-routing.module';
 import { CreatePage } from './create.page';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     IonicModule,
     CreatePageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ComponentsModule
   ],
   declarations: [CreatePage]
 })
