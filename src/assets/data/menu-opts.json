@@ -1,0 +1,12 @@
+[
+    {
+        "icon": "list-outline",
+        "option": "Listar",
+        "redirectTo": "/list"
+    },
+    {
+        "icon": "add-circle-outline",
+        "option": "Agregar",
+        "redirectTo": "/create"
+    }   
+]

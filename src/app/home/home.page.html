@@ -2,11 +2,8 @@
   <ion-toolbar>
 
     <ion-buttons slot="start">
-        <ion-back-button 
-        defaultHref="/"
-        color="primary">
-      </ion-back-button>
-    </ion-buttons>  
+      <ion-menu-button menu="first" color="primary"></ion-menu-button>
+    </ion-buttons>
 
     <ion-title>Catering Service</ion-title>
 
@@ -24,7 +21,7 @@
       Otra manera de gestionar un servicio tan importante como es el catering.
     </ion-card-content>
 
-      <ion-row> 
+    <ion-row> 
         <ion-col width-33>
           <ion-button (click)="goToMyList()" expand="block">Listado</ion-button>
         </ion-col>

@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
+import { Observable } from 'rxjs';
+import { ItemService } from '../services/item.service';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +11,9 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  homeTitle: string = "Catering Service";
-
   constructor(private router: Router) {}
 
   goToMyList(){
-    //this.router.navigateByUrl("/my-menu");
     this.router.navigateByUrl("/list");
   }
 

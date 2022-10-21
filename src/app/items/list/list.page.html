@@ -18,23 +18,22 @@
       <ion-col size="8">
         <ion-card>
           <ion-card-content>
-            <h1>{{i.id}}. {{i.description}}  -  {{i.price}}€</h1>
+            <h2>{{i.description}} - {{i.price}}€</h2>
           </ion-card-content>
         </ion-card>
       </ion-col>
       
       <ion-col size="2">
-        <ion-button size="small" type="ios" color="danger"  (click)="deleteItem(i.id)" expand="block"> 
+        <ion-button type="ios" color="danger"  (click)="presentAlert(i.id, i.description)" expand="block"> 
           <ion-icon slot="start" name="trash-outline"></ion-icon>
         </ion-button>
       </ion-col>
 
       <ion-col size="2">
-        <ion-button size="small"
-                    type="ios" 
+        <ion-button type="ios" 
                     color="secondary" 
                     [routerLink]="['/update/']"
-                    [queryParams]="{ id: i.id }"> 
+                    [queryParams]="{ id: i.id }">
           <ion-icon slot="end" name="open-outline"></ion-icon>
         </ion-button>  
       </ion-col>
@@ -42,7 +41,6 @@
     </ion-row>
   </ion-grid>
 
-  <!-- <ion-button type="ios" (click)="goBack()">Volver</ion-button>  -->
   <ion-button (click)="goBack()" expand="block">Volver</ion-button>
 
 

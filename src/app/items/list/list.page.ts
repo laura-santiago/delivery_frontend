@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../../services/item.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-list',
@@ -12,9 +13,13 @@ export class ListPage implements OnInit {
 
   items: any = [];
 
+  handlerMessage = '';
+  roleMessage = '';
+
   constructor( 
     private itemService: ItemService,
     private router: Router,
+    private alertCtrl: AlertController
   ) { }
 
   ngOnInit() {
@@ -39,14 +44,66 @@ export class ListPage implements OnInit {
     });
   }  
 
-  // updateItem(id){
-  //   console.log('En el list --> id='+id);
-  //   // this.router.navigateByUrl(`/update/${id}`);
-  //   this.router.navigateByUrl(`/update${id}`);
-  // }
-
   goBack(){
     this.router.navigateByUrl("/home");
   }
-  
+
+  async presentAlert(id: BigInteger, description: String) {
+
+    const alert = await this.alertCtrl.create({
+      backdropDismiss: false,
+      header: '¿Borramos '+description+'? ',
+      buttons: [
+        {
+          text: 'Ok',
+          role: 'confirm',
+          handler: () => {
+            this.deleteItem(id);
+          },
+        },        
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'my-custom-class'
+        },
+      ],
+    });
+    await alert.present();
+  }
+
+
+  async presentAlertPrompt() {
+    const alert = await this.alertCtrl.create({
+      header: 'Articulo',
+      buttons: [
+        {
+          text: 'Continuar',
+          role: 'confirm',
+          handler: () => {
+            
+          },
+        },        
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'my-custom-class'
+        },
+      ],
+      inputs: [
+        {
+          type: 'textarea',
+          placeholder: 'descripccion',
+        },        
+        {
+          type: 'number',
+          placeholder: 'PVP',
+          min: 1,
+          max: 100,
+        },
+      ],
+    });
+
+    await alert.present();
+  }
+
 }
