@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../../services/item.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-update',
@@ -18,10 +19,10 @@ export class UpdatePage implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
-    private itemService: ItemService
+    private itemService: ItemService,
+    private loadingCtrl: LoadingController
   ) {
     this.id = this.activatedRoute.snapshot.queryParamMap.get('id');
-    console.log('En el update --> id='+this.id);
   }
 
   ngOnInit() {
@@ -48,7 +49,16 @@ export class UpdatePage implements OnInit {
     this.router.navigateByUrl("/home");
   }
 
-  //(this.endpoint + '/' + id, item, this.httpOptions);
+  async updatingItem() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Actualizando artículo ...',
+      duration: 3000,
+    });
+    loading.present();
+
+    this.onSubmit();
+  }
+
   onSubmit() {
     if (!this.updateItemForm.valid) {
        return false;

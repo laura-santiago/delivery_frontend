@@ -8,5 +8,10 @@
         "icon": "add-circle-outline",
         "option": "Agregar",
         "redirectTo": "/create"
-    }   
+    },
+    {
+        "icon": "exit-outline",
+        "option": "Salir",
+        "redirectTo": "/"
+    }      
 ]

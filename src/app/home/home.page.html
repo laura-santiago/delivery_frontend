@@ -11,27 +11,34 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add-aoutline"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="top">
+      <ion-fab-button color="facebook"><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+      <ion-fab-button color="twitter"><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+      <ion-fab-button color="youtube"><ion-icon name="logo-youtube"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+
+    <ion-fab-list side="start">
+      <ion-fab-button color="vimeo"><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
+      <ion-fab-button color="google"><ion-icon name="logo-google"></ion-icon></ion-fab-button>
+      <ion-fab-button color="github"><ion-icon name="logo-github"></ion-icon></ion-fab-button>
+    </ion-fab-list>    
+
+  </ion-fab>
+  
   <ion-card>
     <ion-card-header>
       <img src="assets/drink.png" alt="catering-log">
-      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-subtitle>Laura</ion-card-subtitle>
     </ion-card-header>
   
     <ion-card-content>
       Otra manera de gestionar un servicio tan importante como es el catering.
     </ion-card-content>
-
-    <ion-row> 
-        <ion-col width-33>
-          <ion-button (click)="goToMyList()" expand="block">Listado</ion-button>
-        </ion-col>
-        <ion-col width-33>
-          <ion-button (click)="goToCreate()" expand="block">Nuevo</ion-button>
-        </ion-col>
-        <ion-col width-33>
-          <ion-button (click)="goToStart()" expand="block">Salir</ion-button>
-        </ion-col>        
-    </ion-row>   
 
   </ion-card>
 </ion-content>

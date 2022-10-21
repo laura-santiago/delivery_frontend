@@ -13,7 +13,6 @@
     </ion-list-header>
 
     <form [formGroup]="updateItemForm" (ngSubmit)="onSubmit()">
-
       <ion-item>
         <ion-label position="floating">Descripcion</ion-label>
         <ion-input formControlName="description" type="text" required></ion-input>
@@ -24,14 +23,9 @@
         <ion-input formControlName="price" type="text" required></ion-input>
       </ion-item>
 
-      <!-- <ion-item>
-        <ion-label position="floating">Activo</ion-label>
-        <ion-input formControlName="actived" type="number" required></ion-input>
-      </ion-item>       -->
-
       <ion-row> 
         <ion-col width-50>
-          <ion-button type="submit" color="light" expand="block"> Actualizar </ion-button>
+          <ion-button (click)="updatingItem()" color="light" expand="block"> Actualizar </ion-button>
         </ion-col>
         <ion-col width-50>
           <ion-button (click)="goBack()" expand="block">Volver</ion-button>

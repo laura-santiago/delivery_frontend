@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../../services/item.service';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
@@ -68,41 +67,6 @@ export class ListPage implements OnInit {
         },
       ],
     });
-    await alert.present();
-  }
-
-
-  async presentAlertPrompt() {
-    const alert = await this.alertCtrl.create({
-      header: 'Articulo',
-      buttons: [
-        {
-          text: 'Continuar',
-          role: 'confirm',
-          handler: () => {
-            
-          },
-        },        
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          cssClass: 'my-custom-class'
-        },
-      ],
-      inputs: [
-        {
-          type: 'textarea',
-          placeholder: 'descripccion',
-        },        
-        {
-          type: 'number',
-          placeholder: 'PVP',
-          min: 1,
-          max: 100,
-        },
-      ],
-    });
-
     await alert.present();
   }
 
