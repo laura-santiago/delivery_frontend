@@ -8,29 +8,31 @@
     <ion-card-subtitle>Y si no te gusta el mojo ...</ion-card-subtitle>
   </ion-card-header>
 
-  <ion-grid fixed>
+  <ion-grid>
     <ion-row *ngFor="let i of items;">
       <ion-col size="8">
-        <ion-card>
-          <ion-card-content>
-            <h2>{{i.description}} - {{i.price}}€</h2>
-          </ion-card-content>
-        </ion-card>
+        <ion-card-content>
+          <ion-avatar>
+            <img *ngIf="i.filename" src="http://localhost:8080/images/{{i.filename}}" alt="image"/>
+          </ion-avatar>
+        
+          <h1>{{i.description}} - {{i.price}}€</h1>
+        </ion-card-content>
       </ion-col>
-      
+
       <ion-col size="2">
-        <ion-button type="ios" color="danger"  (click)="presentAlert(i.id, i.description)" expand="block"> 
+        <ion-button type="ios" color="danger"  (click)="presentAlert(i.id, i.description)"> 
           <ion-icon slot="start" name="trash-outline"></ion-icon>
         </ion-button>
       </ion-col>
 
       <ion-col size="2">
         <ion-button type="ios" 
-                    color="secondary" 
-                    [routerLink]="['/update/']"
-                    [queryParams]="{ id: i.id }">
-          <ion-icon slot="end" name="open-outline"></ion-icon>
-        </ion-button>  
+          color="secondary" 
+          [routerLink]="['/update/']"
+          [queryParams]="{ id: i.id }">
+        <ion-icon slot="end" name="open-outline"></ion-icon>
+        </ion-button> 
       </ion-col>
 
     </ion-row>
