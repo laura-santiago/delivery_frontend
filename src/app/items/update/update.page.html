@@ -6,11 +6,11 @@
 <app-header></app-header>
 
 <ion-content>
-
   <ion-list lines="full">
-    <ion-list-header>
-      <ion-label>Actualización de Articulos</ion-label>
-    </ion-list-header>
+
+    <ion-card-header>
+      <ion-card-title>Actualización de Articulos</ion-card-title>
+    </ion-card-header>  
 
     <form [formGroup]="updateItemForm" (ngSubmit)="onSubmit()">
       <ion-item>
@@ -29,9 +29,8 @@
         </ion-col>
         <ion-col width-50>
           <ion-button (click)="goBack()" expand="block">Volver</ion-button>
-          <!-- <ion-back-button defaultHref="/" expand="block"></ion-back-button> -->
         </ion-col>
-    </ion-row>      
+      </ion-row>      
 
     </form>    
   </ion-list>

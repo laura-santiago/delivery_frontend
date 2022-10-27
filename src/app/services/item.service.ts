@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { MenuOptions } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -14,13 +13,20 @@ export class ItemService {
   };
 
   constructor( private httpClient: HttpClient ) { }
+ 
+  createItem ( item, blob){
+    let formData = new FormData();
+    formData.append("description", item.description);
+    formData.append("price", item.price);
+    formData.append("file", blob);
 
-  getMenuOpts() {
-    return this.httpClient.get<MenuOptions[]> ('/assets/data/menu-opts.json');
-  }
+    console.log('Itemservice - description= '+ item.description);
+    console.log('Itemservice - price= '+ item.price);
+    console.log('Itemservice - blob= '+ blob);
+    console.log('Itemservice - formData= '+ formData);
 
-  createItem ( item: ItemService ): Observable<any> {
-    return this.httpClient.post(this.endpoint, item, this.httpOptions);
+    return this.httpClient.post(this.endpoint, formData);
+    // return this.httpClient.post(this.endpoint, item, this.httpOptions);
   }
 
   getItem(id) {

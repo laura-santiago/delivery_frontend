@@ -39,9 +39,13 @@ export class ListPage implements OnInit {
     console.log('Id='+id);
     this.itemService.deleteItem(id).subscribe(() => {
       this.ionViewDidEnter();
-      console.log('Deleted item');
+      console.log('Artículo borrado');
     });
   }  
+
+  addItem(){
+    this.router.navigateByUrl("/create");
+  }
 
   goBack(){
     this.router.navigateByUrl("/home");
